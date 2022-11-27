@@ -14,16 +14,19 @@ public class AirEquador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        mostrarMenu();
+        mostrarMenuPrincipal();
     }
 
-    static void mostrarMenu() {
+    /**
+     * Muesta el Menú Principal del Sistema
+     */
+    static void mostrarMenuPrincipal() {
         System.out.println(
-            """
-            ++++++++++++++++++++++++++++++++++
-                  BIENVENIDO AL SISTEMA
-            ++++++++++++++++++++++++++++++++++
-            """
+                """
+                ++++++++++++++++++++++++++++++++++
+                      BIENVENIDO AL SISTEMA
+                ++++++++++++++++++++++++++++++++++
+                """
         );
 
         System.out.print("USUARIO: ");

@@ -32,12 +32,12 @@ public class Cliente extends Usuario {
         String opcion;
         do {
             System.out.println(
-                """
+                    """
 
-                1. Comprar tickets aéreos
-                2. Consultar reservas
-                3. Salir
-                """
+                    1. Comprar tickets aéreos
+                    2. Consultar reservas
+                    3. Salir
+                    """
             );
 
             System.out.print("OPCIÓN: ");
@@ -50,10 +50,18 @@ public class Cliente extends Usuario {
                 }
                 case "3" -> {
                 }
-                default ->
+                default -> {
                     System.out.println("\nOPCIÓN INCORRECTA");
+                }
             }
         } while (!opcion.equals("3"));
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombres() + " " + getApellidos() + "\n"
+                + "Tipo: CLIENTE " + (tipoVip == null ? "ESTÁNDAR" : "VIP " + tipoVip.toString().replace("_", " ")) + "\n"
+                + "Cédula: " + getCedula();
     }
 
 }
