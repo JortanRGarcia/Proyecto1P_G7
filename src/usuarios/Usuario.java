@@ -3,6 +3,7 @@ package usuarios;
 import ficheros.Fichero;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public abstract class Usuario {
 
@@ -13,6 +14,8 @@ public abstract class Usuario {
     private final String correo;
     private final String usuario;
     private final String contraseña;
+    
+    protected static final Scanner scanner = new Scanner(System.in);
 
     public Usuario(String cedula, String nombres, String apellidos, int edad, String correo, String usuario, String contraseña) {
         this.cedula = cedula;

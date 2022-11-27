@@ -8,7 +8,7 @@ public class AirEquador {
 
     public static ArrayList<Usuario> usuarios = Usuario.cargarUsuarios();
 
-    static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
@@ -19,9 +19,11 @@ public class AirEquador {
 
     static void mostrarMenu() {
         System.out.println(
-                "++++++++++++++++++++++++++++++++++\n"
-                + "      BIENVENIDO AL SISTEMA\n"
-                + "++++++++++++++++++++++++++++++++++\n"
+            """
+            ++++++++++++++++++++++++++++++++++
+                  BIENVENIDO AL SISTEMA
+            ++++++++++++++++++++++++++++++++++
+            """
         );
 
         System.out.print("USUARIO: ");
@@ -33,6 +35,7 @@ public class AirEquador {
             if (u.iniciarSesion(usuario, contraseña)) {
                 System.out.println("\nBienvenido " + u.getNombres() + " " + u.getApellidos() + "\n");
                 u.mostrarMenu();
+                System.out.println("\nGRACIAS POR UTILIZAR NUESTRO SISTEMA");
                 return;
             }
         }
