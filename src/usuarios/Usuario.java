@@ -1,5 +1,9 @@
 package usuarios;
 
+import ficheros.Fichero;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public abstract class Usuario {
 
     private final String cedula;
@@ -42,6 +46,61 @@ public abstract class Usuario {
 
     public String getUsuario() {
         return usuario;
+    }
+
+    /**
+     * Obtiene la información de los archivos {@code usuarios.txt},
+     * {@code operadores.txt} y {@code clientes.txt}
+     *
+     * @return Retorna un {@code ArrayList<Usuario>} con todos los usuarios
+     * registrados
+     */
+    public static ArrayList<Usuario> cargarUsuarios() {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        HashMap<String, String[]> datosOperadores = new HashMap<>();
+        HashMap<String, String[]> datosClientes = new HashMap<>();
+
+        for (String linea : Fichero.leerSinCabecera("operadores.txt")) {
+            String[] datos = linea.split(",", 2);
+            datosOperadores.put(datos[0], datos[1].split(","));
+        }
+
+        for (String linea : Fichero.leerSinCabecera("clientes.txt")) {
+            String[] datos = linea.split(",", 2);
+            datosClientes.put(datos[0], datos[1].split(","));
+        }
+
+        for (String linea : Fichero.leerSinCabecera("usuarios.txt")) {
+            String[] datos = linea.split(",");
+
+            String cedula = datos[0];
+            String nombres = datos[1];
+            String apellidos = datos[2];
+            int edad = Integer.parseInt(datos[3]);
+            String correo = datos[4];
+            String usuario = datos[5];
+            String contraseña = datos[6];
+            char perfil = datos[7].charAt(0);
+
+            if (perfil == 'O') {
+                String[] datosOperador = datosOperadores.get(cedula);
+                float sueldo = Float.parseFloat(datosOperador[0]);
+
+                usuarios.add(new Operador(cedula, nombres, apellidos, edad, correo, usuario, contraseña, sueldo));
+            } else {
+                String[] datosCliente = datosClientes.get(cedula);
+                String numeroTarjeta = datosCliente[0];
+                TipoVip tipoVip = null;
+                if (!datosCliente[1].equals("null")) {
+                    tipoVip = TipoVip.valueOf(datosCliente[1]);
+                }
+                int millas = Integer.parseInt(datosCliente[2]);
+
+                usuarios.add(new Cliente(cedula, nombres, apellidos, edad, correo, usuario, contraseña, numeroTarjeta, tipoVip, millas));
+            }
+        }
+
+        return usuarios;
     }
 
 }
