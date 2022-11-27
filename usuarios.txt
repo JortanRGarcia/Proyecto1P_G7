@@ -1,5 +1,5 @@
 cédula,nombres,apellidos,edad,correo,usuario,contraseña,perfil
-0932058451,Pepe,Toala,45,toala@correo.com,toala,O
-0932059425,Juan,Mera,20,mera@correo.com,mera,S
-0932051478,Antonio,Neumane,21,neumane@correo.com,neumane,V
-0932053689,Aquiles,Baeza,33,baeza@correo.com,baeza,V
+0932058451,Pepe,Toala,45,toala@correo.com,toala,1234,O
+0932059425,Juan,Mera,20,mera@correo.com,mera,1234,S
+0932051478,Antonio,Neumane,21,neumane@correo.com,neumane,1234,V
+0932053689,Aquiles,Baeza,33,baeza@correo.com,baeza,1234,V
