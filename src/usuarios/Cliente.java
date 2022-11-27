@@ -25,4 +25,9 @@ public class Cliente extends Usuario {
         return millas;
     }
 
+    @Override
+    public void mostrarMenu() {
+        System.out.println("MENÚ CLIENTE");
+    }
+
 }

@@ -47,6 +47,23 @@ public abstract class Usuario {
     public String getUsuario() {
         return usuario;
     }
+    
+    /**
+     * Valida las credenciales de usuario
+     * 
+     * @param usuario
+     * @param contraseña
+     * @return Devuelve {@code true} si las credenciales son correctas, 
+     * caso contrario retorna {@code false}
+     */
+    public boolean iniciarSesion(String usuario, String contraseña){
+        return usuario.equalsIgnoreCase(this.usuario) && contraseña.equals(this.contraseña);
+    }
+    
+    /**
+     * Muestra el menú de usuario
+     */
+    abstract public void mostrarMenu();
 
     /**
      * Obtiene la información de los archivos {@code usuarios.txt},

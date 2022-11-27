@@ -13,4 +13,9 @@ public class Operador extends Usuario {
         return sueldo;
     }
 
+    @Override
+    public void mostrarMenu() {
+        System.out.println("MENÚ OPERADOR");
+    }
+
 }
