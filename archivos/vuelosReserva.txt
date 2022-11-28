@@ -1,0 +1,3 @@
+codigoVueloReserva,codigoVuelo,tipo,tarifa,asiento
+9023,LA1437,IDA,PE,F54
+8172,LA1382,VUELTA,E,C22

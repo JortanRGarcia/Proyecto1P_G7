@@ -1,0 +1,25 @@
+codigoAvion,numeroAsiento,disponible
+Airbus A319,A1,S
+Airbus A319,B1,N
+Airbus A319,C1,N
+Airbus A319,A61,S
+Airbus A319,B61,S
+Airbus A319,C61,S
+Airbus A356,A1,S
+Airbus A356,B1,N
+Airbus A356,C1,N
+Airbus A356,A61,S
+Airbus A356,B61,S
+Airbus A356,C61,S
+Airbus A220,A1,S
+Airbus A220,B1,N
+Airbus A220,C1,N
+Airbus A220,A61,S
+Airbus A220,B61,S
+Airbus A220,C61,S
+Airbus A320,A1,S
+Airbus A320,B1,N
+Airbus A320,C1,N
+Airbus A320,A61,S
+Airbus A320,B61,S
+Airbus A320,C61,S
