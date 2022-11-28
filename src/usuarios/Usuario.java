@@ -80,17 +80,17 @@ public abstract class Usuario {
         HashMap<String, String[]> datosOperadores = new HashMap<>();
         HashMap<String, String[]> datosClientes = new HashMap<>();
 
-        for (String linea : Fichero.leerSinCabecera("operadores.txt")) {
+        for (String linea : Fichero.leerSinCabecera("archivos/operadores.txt")) {
             String[] datos = linea.split(",", 2);
             datosOperadores.put(datos[0], datos[1].split(","));
         }
 
-        for (String linea : Fichero.leerSinCabecera("clientes.txt")) {
+        for (String linea : Fichero.leerSinCabecera("archivos/clientes.txt")) {
             String[] datos = linea.split(",", 2);
             datosClientes.put(datos[0], datos[1].split(","));
         }
 
-        for (String linea : Fichero.leerSinCabecera("usuarios.txt")) {
+        for (String linea : Fichero.leerSinCabecera("archivos/usuarios.txt")) {
             String[] datos = linea.split(",");
 
             String cedula = datos[0];
