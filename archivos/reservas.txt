@@ -1,0 +1,1 @@
+codigoReserva,codigoVuelo,cliente,fecha,valorPagar
