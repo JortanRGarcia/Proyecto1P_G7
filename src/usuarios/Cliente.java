@@ -1,5 +1,9 @@
 package usuarios;
 
+import airequador.AirEquador;
+import java.util.ArrayList;
+import pagos.Reserva;
+
 public class Cliente extends Usuario {
 
     private final String numeroTarjeta;
@@ -15,6 +19,10 @@ public class Cliente extends Usuario {
 
     public Cliente(String cedula, String nombres, String apellidos, int edad, String correo, String usuario, String contraseña, String numeroTarjeta) {
         this(cedula, nombres, apellidos, edad, correo, usuario, contraseña, numeroTarjeta, null, 0);
+    }
+
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
     public TipoVip getTipoVip() {
@@ -45,8 +53,10 @@ public class Cliente extends Usuario {
 
             switch (opcion) {
                 case "1" -> {
+                    comprarTicket();
                 }
                 case "2" -> {
+                    mostrarReservas();
                 }
                 case "3" -> {
                 }
@@ -55,6 +65,36 @@ public class Cliente extends Usuario {
                 }
             }
         } while (!opcion.equals("3"));
+    }
+
+    /**
+     * Menú para la compra de tickets
+     */
+    private void comprarTicket() {
+
+    }
+
+    @Override
+    public void mostrarReservas() {
+        ArrayList<Reserva> reservas = new ArrayList<>();
+
+        for (Reserva reserva : AirEquador.reservas) {
+            if (reserva.getCliente().getCedula().equals(getCedula())) {
+                reservas.add(reserva);
+            }
+        }
+
+        if (reservas.isEmpty()) {
+            System.out.println("\nNO HA REALIZADO RESERVAS");
+            return;
+        }
+
+        System.out.println("\nReservas Realizadas:");
+
+        for (Reserva reserva : reservas) {
+            System.out.println("\n" + reserva);
+            System.out.println("\n------------------------");
+        }
     }
 
     @Override

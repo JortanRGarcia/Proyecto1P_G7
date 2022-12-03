@@ -14,7 +14,7 @@ public abstract class Usuario {
     private final String correo;
     private final String usuario;
     private final String contraseña;
-    
+
     protected static final Scanner scanner = new Scanner(System.in);
 
     public Usuario(String cedula, String nombres, String apellidos, int edad, String correo, String usuario, String contraseña) {
@@ -50,23 +50,28 @@ public abstract class Usuario {
     public String getUsuario() {
         return usuario;
     }
-    
+
     /**
      * Valida las credenciales de usuario
-     * 
+     *
      * @param usuario
      * @param contraseña
-     * @return Devuelve {@code true} si las credenciales son correctas, 
-     * caso contrario retorna {@code false}
+     * @return Devuelve {@code true} si las credenciales son correctas, caso
+     * contrario retorna {@code false}
      */
-    public boolean iniciarSesion(String usuario, String contraseña){
+    public boolean iniciarSesion(String usuario, String contraseña) {
         return usuario.equalsIgnoreCase(this.usuario) && contraseña.equals(this.contraseña);
     }
-    
+
     /**
      * Muestra el menú de usuario
      */
     abstract public void mostrarMenu();
+
+    /**
+     * Muestra las reservas registradas en el sistema
+     */
+    abstract public void mostrarReservas();
 
     /**
      * Obtiene la información de los archivos {@code usuarios.txt},

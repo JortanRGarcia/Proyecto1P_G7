@@ -1,6 +1,5 @@
 package vuelos;
 
-import aviones.Asiento;
 import aviones.Avion;
 import ficheros.Fichero;
 import java.util.ArrayList;

@@ -2,6 +2,8 @@ package usuarios;
 
 import airequador.AirEquador;
 import java.util.ArrayList;
+import java.util.HashMap;
+import pagos.Reserva;
 
 public class Operador extends Usuario {
 
@@ -39,6 +41,7 @@ public class Operador extends Usuario {
                     consultarUsuarios(AirEquador.usuarios);
                 }
                 case "2" -> {
+                    mostrarReservas();
                 }
                 case "3" -> {
                 }
@@ -58,6 +61,31 @@ public class Operador extends Usuario {
         System.out.println("\nUsuarios del Sistema:");
         for (Usuario usuario : usuarios) {
             System.out.println("\n" + usuario);
+        }
+    }
+
+    @Override
+    public void mostrarReservas() {
+        HashMap<String, Integer> nVuelosReservados = new HashMap<>();
+
+        for (Reserva reserva : AirEquador.reservas) {
+            String codigoVuelo = reserva.getVuelo().getCodigo();
+            nVuelosReservados.putIfAbsent(codigoVuelo, 0);
+
+            nVuelosReservados.put(codigoVuelo, 1 + nVuelosReservados.get(codigoVuelo));
+        }
+
+        if (nVuelosReservados.isEmpty()) {
+            System.out.println("\nNO HAY RESERVAS REGISTRADAS");
+            return;
+        }
+
+        System.out.println("\nReservas Registradas:");
+
+        for (String codigoVuelo : nVuelosReservados.keySet()) {
+            System.out.println("\nVUELO: " + codigoVuelo);
+            System.out.println("CANTIDAD RESERVADOS: " + nVuelosReservados.get(codigoVuelo));
+            System.out.println("-------------------------------------");
         }
     }
 

@@ -1,12 +1,17 @@
 package airequador;
 
+import aviones.Avion;
 import java.util.ArrayList;
 import java.util.Scanner;
+import pagos.Reserva;
 import usuarios.Usuario;
+import vuelos.Vuelo;
 
 public class AirEquador {
 
-    public static ArrayList<Usuario> usuarios = Usuario.cargarUsuarios();
+    public static final ArrayList<Usuario> usuarios = Usuario.cargarUsuarios();
+    public static final ArrayList<Vuelo> vuelos = Vuelo.cargarVuelos(Avion.cargarAviones());
+    public static final ArrayList<Reserva> reservas = Reserva.cargarReservas(vuelos, usuarios);
 
     private static final Scanner scanner = new Scanner(System.in);
 
