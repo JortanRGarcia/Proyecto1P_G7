@@ -1,1 +1,3 @@
 codigoReserva,codigoVuelo,cliente,fecha,valorPagar
+EDSYE,LA1437,Aquiles Baeza,1/11/2022,731.65
+EDSYE,LA1382,Aquiles Baeza,1/11/2022,731.65
