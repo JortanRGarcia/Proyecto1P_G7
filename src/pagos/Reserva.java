@@ -52,7 +52,7 @@ public class Reserva {
     public boolean agregarAlFichero() {
         return Fichero.escribir(
                 "archivos/reservas.txt",
-                codigo + "," + vuelo.getCodigo() + "," + cliente + "," + fecha + "," + valorPagar
+                codigo + "," + vuelo.getCodigo() + "," + cliente.getNombres() + " " + cliente.getApellidos() + "," + fecha + "," + valorPagar
         );
     }
 

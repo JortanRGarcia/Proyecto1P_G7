@@ -91,4 +91,17 @@ public class Vuelo {
         return vuelos;
     }
 
+    @Override
+    public String toString() {
+        return "CÓDIGO: " + codigo +"\n"
+                + "HORA SALIDA: " + itinerario.getHoraSalida() +"\n"
+                + "HORA LLEGADA: " + itinerario.getHoraLlegada()+"\n"
+                + "DURACIÓN: "+ itinerario.getDuracion()+"\n"
+                + "AVIÓN: "+ avion.getCodigo()+"\n"
+                + "PRECIO: "+ precio+"\n"
+                + "COSTO MILLAS: "+ precioMillas;
+    }
+    
+    
+
 }

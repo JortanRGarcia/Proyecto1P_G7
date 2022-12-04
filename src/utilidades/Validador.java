@@ -6,7 +6,7 @@ public abstract class Validador {
      * Intenta convertir el String a un número entero
      *
      * @param str El String que contiene un dígito numérico entero
-     * @return El número entero que contiene el String, caso contrario retorna
+     * @return El número entero que contiene el String, en caso de error retorna
      * {@code null}
      */
     public static Integer entero(String str) {
@@ -64,7 +64,7 @@ public abstract class Validador {
      * retorna {@code false}
      */
     public static boolean sonFechasIguales(String fecha1, String fecha2) {
-
+        
         String[] valores1 = fecha1.split("/");
 
         int d1 = Integer.parseInt(valores1[0]);

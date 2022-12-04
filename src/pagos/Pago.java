@@ -5,13 +5,13 @@ import ficheros.Fichero;
 public class Pago {
     
     private final String id;
-    private final Reserva reserva;
+    private final String codigoReserva;
     private final float totalPagarFinal;
     private final ModoPago modoPago;
 
-    public Pago(String id, Reserva reserva, float totalPagarFinal, ModoPago modoPago) {
+    public Pago(String id, String codigoReserva, float totalPagarFinal, ModoPago modoPago) {
         this.id = id;
-        this.reserva = reserva;
+        this.codigoReserva = codigoReserva;
         this.totalPagarFinal = totalPagarFinal;
         this.modoPago = modoPago;
     }
@@ -20,8 +20,8 @@ public class Pago {
         return id;
     }
 
-    public Reserva getReserva() {
-        return reserva;
+    public String getCodigoReserva() {
+        return codigoReserva;
     }
 
     public float getTotalPagarFinal() {
@@ -39,9 +39,8 @@ public class Pago {
      * contrario se retornará {@code false}
      */
     public boolean agregarAlFichero() {
-        return Fichero.escribir(
-                "archivos/pagos.txt",
-                id + "," + reserva.getCodigo() + "," + totalPagarFinal + "," + modoPago.toString()
+        return Fichero.escribir("archivos/pagos.txt",
+                id + "," + codigoReserva + "," + totalPagarFinal + "," + modoPago.toString()
         );
     }
 
